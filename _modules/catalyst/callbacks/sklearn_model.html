@@ -270,7 +270,7 @@
 
 
 <div class="viewcode-block" id="SklearnModelCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.sklearn_model.SklearnModelCallback">[docs]</a><span class="k">class</span> <span class="nc">SklearnModelCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Callback to train a classifier on the train loader and</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Callback to train a classifier on the train loader and</span>
 <span class="sd">    to give predictions on the valid loader.</span>
 
 <span class="sd">    Args:</span>
@@ -327,7 +327,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span> <span class="n">AccumulativeMetric</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="n">feature_key</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loader start hook: initiliaze storages for the loaders.</span>
 
 <span class="sd">        Args:</span>
@@ -342,7 +342,7 @@
             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;The train loader has to be processed first!&quot;</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On batch end action: get data from runner&#39;s batch</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On batch end action: get data from runner&#39;s batch</span>
 <span class="sd">        and update a loader storage with it</span>
 
 <span class="sd">        Args:</span>
@@ -363,7 +363,7 @@
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Loader end hook: for the train loader train classifier,</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader end hook: for the train loader train classifier,</span>
 <span class="sd">        for the test check the quality.</span>
 
 <span class="sd">        Args:</span>
@@ -392,7 +392,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Epoch end hook: the callback delete the model.</span>
 
 <span class="sd">        Args:</span>
@@ -415,7 +415,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

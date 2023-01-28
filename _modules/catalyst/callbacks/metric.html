@@ -270,11 +270,11 @@
 
 
 <span class="k">class</span> <span class="nc">_IMetricCallback</span><span class="p">(</span><span class="n">IMetricCallback</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Metric callback interface, abstraction over metric step.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Metric callback interface, abstraction over metric step.&quot;&quot;&quot;</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        On loader start action</span>
 
 <span class="sd">        Args:</span>
@@ -284,7 +284,7 @@
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        On batch end action</span>
 
 <span class="sd">        Args:</span>
@@ -294,7 +294,7 @@
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        On loader end action</span>
 
 <span class="sd">        Args:</span>
@@ -304,7 +304,7 @@
 
 
 <span class="k">class</span> <span class="nc">_MetricCallback</span><span class="p">(</span><span class="n">_IMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    MetricCallback is a base implementation of callback</span>
 <span class="sd">    that updates metrics over batch or loader.</span>
 
@@ -320,7 +320,7 @@
         <span class="n">input_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
         <span class="n">target_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init MetricCallback&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init MetricCallback&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metric</span> <span class="o">=</span> <span class="n">metric</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">IMetric</span><span class="p">)</span>
@@ -353,7 +353,7 @@
     <span class="k">def</span> <span class="nf">_convert_keys_to_kv</span><span class="p">(</span>
         <span class="n">keys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert keys to key-value format</span>
 
 <span class="sd">        Args:</span>
@@ -374,7 +374,7 @@
         <span class="k">return</span> <span class="n">kv_keys</span>
 
     <span class="k">def</span> <span class="nf">_get_value_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get data from batch in value input case</span>
 
 <span class="sd">        Args:</span>
@@ -386,7 +386,7 @@
         <span class="k">return</span> <span class="n">runner</span><span class="o">.</span><span class="n">batch</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_key</span><span class="p">],</span> <span class="n">runner</span><span class="o">.</span><span class="n">batch</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target_key</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">_get_key_value_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get data from batch in key-value input case</span>
 
 <span class="sd">        Args:</span>
@@ -403,7 +403,7 @@
     <span class="k">def</span> <span class="nf">_update_value_metric</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">value_inputs</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update metric in value input case</span>
 
 <span class="sd">        Args:</span>
@@ -417,7 +417,7 @@
     <span class="k">def</span> <span class="nf">_update_key_value_metric</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">kv_inputs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update metric in key-value input case</span>
 
 <span class="sd">        Args:</span>
@@ -430,7 +430,7 @@
 
 
 <div class="viewcode-block" id="BatchMetricCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.metric.BatchMetricCallback">[docs]</a><span class="k">class</span> <span class="nc">BatchMetricCallback</span><span class="p">(</span><span class="n">_MetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;BatchMetricCallback implements batch-based metrics update</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;BatchMetricCallback implements batch-based metrics update</span>
 <span class="sd">    and computation over loader</span>
 
 <span class="sd">    Args:</span>
@@ -447,14 +447,14 @@
         <span class="n">target_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
         <span class="n">log_on_batch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Init BatchMetricCallback&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init BatchMetricCallback&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span> <span class="n">target_key</span><span class="o">=</span><span class="n">target_key</span><span class="p">)</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">ICallbackBatchMetric</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log_on_batch</span> <span class="o">=</span> <span class="n">log_on_batch</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_metric_update_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">update_key_value</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On loader start action: reset metric values</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On loader start action: reset metric values</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -462,7 +462,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">metric</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On batch end action: update metric with new batch data</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On batch end action: update metric with new batch data</span>
 <span class="sd">        and log it&#39;s value if necessary</span>
 
 <span class="sd">        Args:</span>
@@ -474,7 +474,7 @@
             <span class="n">runner</span><span class="o">.</span><span class="n">batch_metrics</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">metrics</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On loader end action: compute metric values</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On loader end action: compute metric values</span>
 <span class="sd">        and update runner&#39;s loader metrics with it</span>
 
 <span class="sd">        Args:</span>
@@ -486,7 +486,7 @@
 
 
 <span class="k">class</span> <span class="nc">FunctionalBatchMetricCallback</span><span class="p">(</span><span class="n">BatchMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;FunctionalBatchMetricCallback implements batch-based metrics update</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FunctionalBatchMetricCallback implements batch-based metrics update</span>
 <span class="sd">    and computation over loader for ``FunctionalBatchMetric`` metrics.</span>
 
 <span class="sd">    Args:</span>
@@ -509,7 +509,7 @@
         <span class="n">target_key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
         <span class="n">log_on_batch</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">FunctionalBatchMetric</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span>
@@ -521,7 +521,7 @@
     <span class="k">def</span> <span class="nf">_get_value_inputs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Get data from batch in value input case</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get data from batch in value input case</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -536,7 +536,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_get_key_value_inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Get data from batch in key-value input case</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get data from batch in key-value input case</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -552,7 +552,7 @@
 
 
 <div class="viewcode-block" id="LoaderMetricCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.metric.LoaderMetricCallback">[docs]</a><span class="k">class</span> <span class="nc">LoaderMetricCallback</span><span class="p">(</span><span class="n">_MetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;LoaderMetricCallback implements loader-based metrics update</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;LoaderMetricCallback implements loader-based metrics update</span>
 <span class="sd">    and computation over loader</span>
 
 <span class="sd">    Args:</span>
@@ -571,7 +571,7 @@
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="n">ICallbackLoaderMetric</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On loader star action:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On loader star action:</span>
 <span class="sd">        reset metric values in case of ICallbackLoaderMetric metric</span>
 
 <span class="sd">        Args:</span>
@@ -582,7 +582,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On batch end action: get data from runner&#39;s batch and update metrics with it</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On batch end action: get data from runner&#39;s batch and update metrics with it</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -591,7 +591,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_metric</span><span class="p">(</span><span class="n">metrics_inputs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;On loader end action:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;On loader end action:</span>
 <span class="sd">        compute metric values and update runner&#39;s loader metrics with it</span>
 
 <span class="sd">        Args:</span>
@@ -620,7 +620,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

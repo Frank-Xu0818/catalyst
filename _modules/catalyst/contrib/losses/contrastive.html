@@ -264,7 +264,7 @@
 
 
 <span class="k">class</span> <span class="nc">ContrastiveEmbeddingLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Contrastive embedding loss.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Contrastive embedding loss.</span>
 
 <span class="sd">    It has been proposed in `Dimensionality Reduction</span>
 <span class="sd">    by Learning an Invariant Mapping`_.</span>
@@ -274,7 +274,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin parameter</span>
 <span class="sd">            reduction: criterion reduction type</span>
@@ -289,7 +289,7 @@
         <span class="n">embeddings_right</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
         <span class="n">distance_true</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            embeddings_left: left objects embeddings</span>
@@ -318,13 +318,13 @@
 
 
 <span class="k">class</span> <span class="nc">ContrastiveDistanceLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Contrastive distance loss.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Contrastive distance loss.</span>
 
 <span class="sd">    @TODO: Docs. Contribution is welcome.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin parameter</span>
 <span class="sd">            reduction: criterion reduction type</span>
@@ -334,7 +334,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">reduction</span> <span class="o">=</span> <span class="n">reduction</span> <span class="ow">or</span> <span class="s2">&quot;none&quot;</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance_pred</span><span class="p">,</span> <span class="n">distance_true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            distance_pred: predicted distances</span>
@@ -358,7 +358,7 @@
 
 
 <span class="k">class</span> <span class="nc">ContrastivePairwiseEmbeddingLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;ContrastivePairwiseEmbeddingLoss – proof of concept criterion.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;ContrastivePairwiseEmbeddingLoss – proof of concept criterion.</span>
 
 <span class="sd">    Still work in progress.</span>
 
@@ -366,7 +366,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin parameter</span>
 <span class="sd">            reduction: criterion reduction type</span>
@@ -376,7 +376,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">reduction</span> <span class="o">=</span> <span class="n">reduction</span> <span class="ow">or</span> <span class="s2">&quot;none&quot;</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings_pred</span><span class="p">,</span> <span class="n">embeddings_true</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
 
 <span class="sd">        Work in progress.</span>
 
@@ -399,7 +399,7 @@
 
 
 <div class="viewcode-block" id="BarlowTwinsLoss"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.contrastive.BarlowTwinsLoss">[docs]</a><span class="k">class</span> <span class="nc">BarlowTwinsLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Contrastive embedding loss.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Contrastive embedding loss.</span>
 
 <span class="sd">    It has been proposed in `Barlow Twins:</span>
 <span class="sd">    Self-Supervised Learning via Redundancy Reduction`_.</span>
@@ -422,7 +422,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="BarlowTwinsLoss.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.contrastive.BarlowTwinsLoss.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offdiag_lambda</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            offdiag_lambda: trade-off parameter</span>
 <span class="sd">            eps: shift for the varience (var + eps)</span>
@@ -434,7 +434,7 @@
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">embeddings_left</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">embeddings_right</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation method for the contrastive loss.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            embeddings_left: left objects embeddings [batch_size, features_dim]</span>
@@ -507,7 +507,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

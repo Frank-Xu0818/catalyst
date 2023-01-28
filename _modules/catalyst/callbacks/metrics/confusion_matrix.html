@@ -275,7 +275,7 @@
 
 
 <div class="viewcode-block" id="ConfusionMatrixCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.confusion_matrix.ConfusionMatrixCallback">[docs]</a><span class="k">class</span> <span class="nc">ConfusionMatrixCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Callback to plot your confusion matrix to the loggers.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Callback to plot your confusion matrix to the loggers.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        input_key: key to use from ``runner.batch``, specifies our ``y_pred``</span>
@@ -362,7 +362,7 @@
         <span class="n">normalize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">plot_params</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Callback initialisation.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Callback initialisation.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">CallbackOrder</span><span class="o">.</span><span class="n">metric</span><span class="p">)</span>
         <span class="k">assert</span> <span class="n">num_classes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">class_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span> <span class="ow">or</span> <span class="s2">&quot;confusion_matrix&quot;</span>
@@ -381,7 +381,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loader start hook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader start hook.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -389,7 +389,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Batch end hook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Batch end hook.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -401,7 +401,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">predictions</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span><span class="o">=</span><span class="n">targets</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loader end hook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader end hook.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -431,7 +431,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

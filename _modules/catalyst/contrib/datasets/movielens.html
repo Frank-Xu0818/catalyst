@@ -272,7 +272,7 @@
 
 
 <div class="viewcode-block" id="MovieLens"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.datasets.movielens.MovieLens">[docs]</a><span class="k">class</span> <span class="nc">MovieLens</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    MovieLens data sets were collected by the GroupLens Research Project</span>
 <span class="sd">    at the University of Minnesota.</span>
 
@@ -323,7 +323,7 @@
     <span class="n">test_file</span> <span class="o">=</span> <span class="s2">&quot;test.pt&quot;</span>
 
 <div class="viewcode-block" id="MovieLens.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.datasets.movielens.MovieLens.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">min_rating</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            root (string): Root directory of dataset where</span>
 <span class="sd">                ``MovieLens/processed/training.pt``</span>
@@ -362,7 +362,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">))</span></div>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get item.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get item.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            user_index (int): User index [0, 942]</span>
@@ -373,12 +373,12 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">user_index</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The length of the loader&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The length of the loader&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">raw_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create raw folder for data download</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create raw folder for data download</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            raw_path (path): raw folder path</span>
@@ -387,7 +387,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">processed_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create the folder for the processed files</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the folder for the processed files</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            raw_path (path): processed folder path</span>
@@ -395,7 +395,7 @@
         <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;processed&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_check_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Check if the path for tarining and testing data</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the path for tarining and testing data</span>
 <span class="sd">        exists in processed folder.</span>
 
 <span class="sd">        Returns:</span>
@@ -406,7 +406,7 @@
         <span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Download and extract files/&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download and extract files/&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_exists</span><span class="p">():</span>
             <span class="k">return</span>
 
@@ -424,7 +424,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_read_raw_movielens_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the raw lines of the train and test files.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the raw lines of the train and test files.&quot;&quot;&quot;</span>
         <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span>
 
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/ml-100k/ua.base&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datafile</span><span class="p">:</span>
@@ -442,7 +442,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">ua_base</span><span class="p">,</span> <span class="n">ua_test</span><span class="p">,</span> <span class="n">u_item</span><span class="p">,</span> <span class="n">u_genre</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_build_interaction_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Builds interaction matrix.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds interaction matrix.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            rows (int): rows of the oevrall dataset</span>
@@ -471,7 +471,7 @@
         <span class="k">return</span> <span class="n">interaction_matrix</span>
 
     <span class="k">def</span> <span class="nf">_parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Parses the raw data. Substract one to shift to zero based indexing</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parses the raw data. Substract one to shift to zero based indexing</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data: raw data of the dataset</span>
@@ -488,7 +488,7 @@
             <span class="k">yield</span> <span class="n">uid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">iid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rating</span><span class="p">,</span> <span class="n">timestamp</span>
 
     <span class="k">def</span> <span class="nf">_get_dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Gets the dimensions of the raw dataset</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the dimensions of the raw dataset</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            train_data: (uid, iid, rating, timestamp)</span>
@@ -514,7 +514,7 @@
         <span class="k">return</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span>
 
     <span class="k">def</span> <span class="nf">_fetch_movies</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Fetch data and save in the pytorch format</span>
 <span class="sd">            1. Read the train/test data from raw archive</span>
 <span class="sd">            2. Parse train data</span>
@@ -546,7 +546,7 @@
 
 
 <span class="k">class</span> <span class="nc">MovieLens20M</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    MovieLens data sets (ml-20m) were collected by</span>
 <span class="sd">    the GroupLens Research Project at the University of Minnesota.</span>
 
@@ -681,7 +681,7 @@
         <span class="n">sample</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">n_rows</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            root (string): Root directory of dataset where</span>
 <span class="sd">                ``MovieLens/processed/training.pt``</span>
@@ -742,7 +742,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_index</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get item.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get item.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            user_index (int): User index</span>
@@ -753,12 +753,12 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">user_index</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The length of the loader&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The length of the loader&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">raw_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create raw folder for data download</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create raw folder for data download</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            raw_path (path): raw folder path</span>
@@ -767,7 +767,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">processed_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create the folder for the processed files</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the folder for the processed files</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            raw_path (path): processed folder path</span>
@@ -775,7 +775,7 @@
         <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;processed&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_check_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Check if the path for tarining and testing data exists in</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the path for tarining and testing data exists in</span>
 <span class="sd">        processed folder.</span>
 
 <span class="sd">        Returns:</span>
@@ -786,7 +786,7 @@
         <span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Download and extract files&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Download and extract files&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_exists</span><span class="p">():</span>
             <span class="k">return</span>
 
@@ -802,7 +802,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_read_raw_movielens_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Read the csv files with pandas.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Read the csv files with pandas.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            (movies, ratings, genome_scores, genome_tags, tags):</span>
@@ -829,7 +829,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">ratings</span><span class="p">,</span> <span class="n">genome_scores</span><span class="p">,</span> <span class="n">genome_tags</span><span class="p">,</span> <span class="n">tags</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_build_interaction_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratings</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Builds interaction matrix.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds interaction matrix.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            ratings (pd.Dataframe): pandas DataFrame of the following format</span>
@@ -866,7 +866,7 @@
         <span class="n">item_per_user_cut</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">ts_cut</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Parses and pre-process the raw data.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parses and pre-process the raw data.</span>
 <span class="sd">        Substract one to shift to zero based indexing</span>
 <span class="sd">        To-do add timestamp cut</span>
 
@@ -960,7 +960,7 @@
         <span class="k">return</span> <span class="n">ratings</span><span class="p">,</span> <span class="n">users_activity</span><span class="p">,</span> <span class="n">items_activity</span>
 
     <span class="k">def</span> <span class="nf">_split_by_users</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratings</span><span class="p">,</span> <span class="n">users_activity</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Split the ratings DataFrame into train and test</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split the ratings DataFrame into train and test</span>
 <span class="sd">        Randomly shuffle users and split</span>
 
 <span class="sd">        Args:</span>
@@ -991,7 +991,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">train_events</span><span class="p">,</span> <span class="n">test_events</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_split_by_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratings</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Split the ratings DataFrame into train and test by timestamp</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Split the ratings DataFrame into train and test by timestamp</span>
 <span class="sd">        Ratings[timestamp] extreme values used for the filtering interval</span>
 
 <span class="sd">        Args:</span>
@@ -1018,7 +1018,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">train_events</span><span class="p">,</span> <span class="n">test_events</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_fetch_movies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">split_by</span><span class="o">=</span><span class="s2">&quot;users&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Fetch data and save in the pytorch format</span>
 <span class="sd">            1. Read the MovieLens20 data from raw archive</span>
 <span class="sd">            2. Parse the rating dataset</span>
@@ -1073,7 +1073,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

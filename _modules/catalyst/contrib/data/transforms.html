@@ -268,7 +268,7 @@
 
 
 <span class="k">def</span> <span class="nf">image_to_tensor</span><span class="p">(</span><span class="n">pic</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Convert ``numpy.ndarray`` to tensor.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert ``numpy.ndarray`` to tensor.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        pic (PIL Image or numpy.ndarray): Image to be converted to tensor.</span>
@@ -296,7 +296,7 @@
 
 
 <span class="k">def</span> <span class="nf">normalize_image</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Normalize a tensor image with mean and standard deviation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalize a tensor image with mean and standard deviation.</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">        This transform acts out of place by default, i.e.,</span>
@@ -328,10 +328,10 @@
 
 
 <div class="viewcode-block" id="Compose"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.transforms.Compose">[docs]</a><span class="k">class</span> <span class="nc">Compose</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Composes several transforms together.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Composes several transforms together.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Compose.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.transforms.Compose.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transforms</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            transforms: list of transforms to compose.</span>
 
@@ -341,13 +341,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span> <span class="o">=</span> <span class="n">transforms</span></div>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Applies several transforms to the data.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Applies several transforms to the data.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">:</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
         <span class="n">format_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">:</span>
             <span class="n">format_string</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -357,7 +357,7 @@
 
 
 <div class="viewcode-block" id="ImageToTensor"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.transforms.ImageToTensor">[docs]</a><span class="k">class</span> <span class="nc">ImageToTensor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert a ``numpy.ndarray`` to tensor.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a ``numpy.ndarray`` to tensor.</span>
 <span class="sd">    Converts numpy.ndarray (H x W x C) in the range [0, 255] to a</span>
 <span class="sd">    torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]</span>
 <span class="sd">    if the numpy.ndarray has dtype = np.uint8</span>
@@ -365,7 +365,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pic</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            pic (PIL Image or numpy.ndarray): Image to be converted to tensor.</span>
 
@@ -375,12 +375,12 @@
         <span class="k">return</span> <span class="n">image_to_tensor</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;()&quot;</span></div>
 
 
 <div class="viewcode-block" id="NormalizeImage"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.transforms.NormalizeImage">[docs]</a><span class="k">class</span> <span class="nc">NormalizeImage</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Normalize a tensor image with mean and standard deviation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalize a tensor image with mean and standard deviation.</span>
 
 <span class="sd">    Given mean: ``(mean[1],...,mean[n])`` and std: ``(std[1],..,std[n])``</span>
 <span class="sd">    for ``n`` channels, this transform will normalize each channel of the input</span>
@@ -393,7 +393,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="NormalizeImage.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.transforms.NormalizeImage.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            mean: Sequence of means for each channel.</span>
 <span class="sd">            std: Sequence of standard deviations for each channel.</span>
@@ -404,7 +404,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span> <span class="o">=</span> <span class="n">inplace</span></div>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tensor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            tensor: Tensor image of size (C, H, W) to be normalized.</span>
 
@@ -414,7 +414,7 @@
         <span class="k">return</span> <span class="n">normalize_image</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">inplace</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;(mean=</span><span class="si">{0}</span><span class="s2">, std=</span><span class="si">{1}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">std</span>
         <span class="p">)</span></div>
@@ -439,7 +439,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

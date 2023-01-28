@@ -725,16 +725,16 @@ And thanks to the pure PyTorch, the code is easily readable and straightforward.
 <section id="launch-your-training">
 <h2>Launch your training<a class="headerlink" href="#launch-your-training" title="Permalink to this headline">¶</a></h2>
 <p>In your terminal, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python <span class="o">{</span>script_name<span class="o">}</span>.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span><span class="o">{</span>script_name<span class="o">}</span>.py
 </pre></div>
 </div>
 <p>You can vary available GPUs with <code class="docutils literal notranslate"><span class="pre">CUDA_VIBIBLE_DEVICES</span></code> option, for example,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># run only on 1st and 2nd GPUs</span>
-<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;1,2&quot;</span> python <span class="o">{</span>script_name<span class="o">}</span>.py
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;1,2&quot;</span><span class="w"> </span>python<span class="w"> </span><span class="o">{</span>script_name<span class="o">}</span>.py
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># run only on 0, 1st and 3rd GPUs</span>
-<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;0,1,3&quot;</span> python <span class="o">{</span>script_name<span class="o">}</span>.py
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;0,1,3&quot;</span><span class="w"> </span>python<span class="w"> </span><span class="o">{</span>script_name<span class="o">}</span>.py
 </pre></div>
 </div>
 <p>What is going under the hood?
@@ -780,7 +780,7 @@ and log them on <code class="docutils literal notranslate"><span class="pre">ran
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

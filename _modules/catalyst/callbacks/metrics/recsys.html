@@ -268,7 +268,7 @@
 
 
 <div class="viewcode-block" id="HitrateCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.recsys.HitrateCallback">[docs]</a><span class="k">class</span> <span class="nc">HitrateCallback</span><span class="p">(</span><span class="n">BatchMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Hitrate metric callback.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hitrate metric callback.</span>
 <span class="sd">    Computes  HR@topk for the specified values of `topk`.</span>
 
 <span class="sd">    Args:</span>
@@ -368,7 +368,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">HitrateMetric</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="n">topk</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="n">suffix</span><span class="p">),</span>
             <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
@@ -378,7 +378,7 @@
 
 
 <div class="viewcode-block" id="MAPCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.recsys.MAPCallback">[docs]</a><span class="k">class</span> <span class="nc">MAPCallback</span><span class="p">(</span><span class="n">BatchMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;MAP metric callback.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;MAP metric callback.</span>
 <span class="sd">    Computes  MAP@topk for the specified values of `topk`.</span>
 
 <span class="sd">    Args:</span>
@@ -479,7 +479,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">MAPMetric</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="n">topk</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="n">suffix</span><span class="p">),</span>
             <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
@@ -489,7 +489,7 @@
 
 
 <div class="viewcode-block" id="MRRCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.recsys.MRRCallback">[docs]</a><span class="k">class</span> <span class="nc">MRRCallback</span><span class="p">(</span><span class="n">BatchMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;MRR metric callback.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;MRR metric callback.</span>
 <span class="sd">    Computes  MRR@topk for the specified values of `topk`.</span>
 
 <span class="sd">    Args:</span>
@@ -590,7 +590,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">MRRMetric</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="n">topk</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="n">suffix</span><span class="p">),</span>
             <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
@@ -600,7 +600,7 @@
 
 
 <div class="viewcode-block" id="NDCGCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.recsys.NDCGCallback">[docs]</a><span class="k">class</span> <span class="nc">NDCGCallback</span><span class="p">(</span><span class="n">BatchMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;NDCG metric callback.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;NDCG metric callback.</span>
 <span class="sd">    Computes  NDCG@topk for the specified values of `topk`.</span>
 
 <span class="sd">    Args:</span>
@@ -701,7 +701,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">NDCGMetric</span><span class="p">(</span><span class="n">topk</span><span class="o">=</span><span class="n">topk</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="n">suffix</span><span class="p">),</span>
             <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
@@ -723,7 +723,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

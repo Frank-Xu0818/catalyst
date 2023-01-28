@@ -271,7 +271,7 @@
 <div class="viewcode-block" id="binary_average_precision"><a class="viewcode-back" href="../../../../api/metrics.html#catalyst.metrics.functional._average_precision.binary_average_precision">[docs]</a><span class="k">def</span> <span class="nf">binary_average_precision</span><span class="p">(</span>
     <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">weights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Computes the binary average precision.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the binary average precision.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outputs: NxK tensor that for each of the N examples</span>
@@ -339,7 +339,7 @@
 <div class="viewcode-block" id="average_precision"><a class="viewcode-back" href="../../../../api/metrics.html#catalyst.metrics.functional._average_precision.average_precision">[docs]</a><span class="k">def</span> <span class="nf">average_precision</span><span class="p">(</span>
     <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the Average Precision for RecSys.</span>
 <span class="sd">    The precision metric summarizes the fraction of relevant items</span>
 <span class="sd">    out of the whole the recommendation list.</span>
@@ -420,7 +420,7 @@
 <div class="viewcode-block" id="mean_average_precision"><a class="viewcode-back" href="../../../../api/metrics.html#catalyst.metrics.functional._average_precision.mean_average_precision">[docs]</a><span class="k">def</span> <span class="nf">mean_average_precision</span><span class="p">(</span>
     <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">topk</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the mean average precision (MAP) for RecSys.</span>
 <span class="sd">    The metrics calculate the mean of the AP across all batches</span>
 
@@ -487,7 +487,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

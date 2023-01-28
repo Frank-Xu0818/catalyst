@@ -271,12 +271,12 @@
 <p>With the help of <code class="docutils literal notranslate"><span class="pre">CheckpointCallback</span></code>
 Catalyst creates the following checkpoints structure under selected <code class="docutils literal notranslate"><span class="pre">logdir</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>logdir/
-    code/ &lt;-- code of your experiment and dump of the catalyst, <span class="k">for</span> reproducibility --&gt;
-    checkpoints/ &lt;-- theme of the topic --&gt;
-        <span class="o">{</span>model/runner<span class="o">}</span>.<span class="o">{</span>epoch_index:04d<span class="o">}</span>.pth &lt;-- topK checkpoints based on model selection logic --&gt;
-        best.pth &lt;-- best model based on specified model selection logic --&gt;
-        last.pth &lt;-- last model checkpoint <span class="k">in</span> the whole experiment run --&gt;
-    ...
+<span class="w">    </span>code/<span class="w"> </span>&lt;--<span class="w"> </span>code<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>experiment<span class="w"> </span>and<span class="w"> </span>dump<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>catalyst,<span class="w"> </span><span class="k">for</span><span class="w"> </span>reproducibility<span class="w"> </span>--&gt;
+<span class="w">    </span>checkpoints/<span class="w"> </span>&lt;--<span class="w"> </span>theme<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>topic<span class="w"> </span>--&gt;
+<span class="w">        </span><span class="o">{</span>model/runner<span class="o">}</span>.<span class="o">{</span>epoch_index:04d<span class="o">}</span>.pth<span class="w"> </span>&lt;--<span class="w"> </span>topK<span class="w"> </span>checkpoints<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>model<span class="w"> </span>selection<span class="w"> </span>logic<span class="w"> </span>--&gt;
+<span class="w">        </span>best.pth<span class="w"> </span>&lt;--<span class="w"> </span>best<span class="w"> </span>model<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>specified<span class="w"> </span>model<span class="w"> </span>selection<span class="w"> </span>logic<span class="w"> </span>--&gt;
+<span class="w">        </span>last.pth<span class="w"> </span>&lt;--<span class="w"> </span>last<span class="w"> </span>model<span class="w"> </span>checkpoint<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>whole<span class="w"> </span>experiment<span class="w"> </span>run<span class="w"> </span>--&gt;
+<span class="w">    </span>...
 </pre></div>
 </div>
 </section>
@@ -288,11 +288,11 @@ Catalyst creates the following checkpoints structure under selected <code class=
 <li><p><code class="docutils literal notranslate"><span class="pre">runner.{suffix}.pth</span></code> - stores all state dicts for model(s), criterion(s), optimizer(s) and scheduler(s) and could be used for experiment analysis purposes.</p></li>
 </ul>
 <p>Runner checkpoints are pure PyTorch checkpoints without any mixins with the following structure:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>checkpoint.pth <span class="o">=</span> <span class="o">{</span>
-    <span class="s2">&quot;model_state_dict&quot;</span>: model.state_dict<span class="o">()</span>,
-    <span class="s2">&quot;criterion_state_dict&quot;</span>: criterion.state_dict<span class="o">()</span>,
-    <span class="s2">&quot;optimizer_state_dict&quot;</span>: optimizer.state_dict<span class="o">()</span>,
-    <span class="s2">&quot;scheduler_state_dict&quot;</span>: scheduler.state_dict<span class="o">()</span>,
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>checkpoint.pth<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;model_state_dict&quot;</span>:<span class="w"> </span>model.state_dict<span class="o">()</span>,
+<span class="w">    </span><span class="s2">&quot;criterion_state_dict&quot;</span>:<span class="w"> </span>criterion.state_dict<span class="o">()</span>,
+<span class="w">    </span><span class="s2">&quot;optimizer_state_dict&quot;</span>:<span class="w"> </span>optimizer.state_dict<span class="o">()</span>,
+<span class="w">    </span><span class="s2">&quot;scheduler_state_dict&quot;</span>:<span class="w"> </span>scheduler.state_dict<span class="o">()</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -351,7 +351,7 @@ Catalyst creates the following checkpoints structure under selected <code class=
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

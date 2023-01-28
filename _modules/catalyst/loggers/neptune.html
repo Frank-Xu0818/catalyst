@@ -290,7 +290,7 @@
 
 
 <div class="viewcode-block" id="NeptuneLogger"><a class="viewcode-back" href="../../../api/loggers.html#catalyst.loggers.neptune.NeptuneLogger">[docs]</a><span class="k">class</span> <span class="nc">NeptuneLogger</span><span class="p">(</span><span class="n">ILogger</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Neptune logger for parameters, metrics, images and other artifacts (videos, audio,</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Neptune logger for parameters, metrics, images and other artifacts (videos, audio,</span>
 <span class="sd">    model checkpoints, etc.).</span>
 
 <span class="sd">    Neptune documentation:</span>
@@ -401,7 +401,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Internal logger/experiment/etc. from the monitoring system.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal logger/experiment/etc. from the monitoring system.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">run</span>
 
     <span class="k">def</span> <span class="nf">_log_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metrics</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">neptune_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
@@ -425,7 +425,7 @@
         <span class="n">path_to_artifact</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs arbitrary file (audio, video, csv, etc.) to Neptune.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs arbitrary file (audio, video, csv, etc.) to Neptune.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">artifact</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">path_to_artifact</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;artifact and path_to_artifact are mutually exclusive&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">scope</span> <span class="o">==</span> <span class="s2">&quot;batch&quot;</span><span class="p">:</span>
@@ -469,7 +469,7 @@
         <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">,</span>
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs image to Neptune for current scope on current step.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs image to Neptune for current scope on current step.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">scope</span> <span class="o">==</span> <span class="s2">&quot;batch&quot;</span> <span class="ow">or</span> <span class="n">scope</span> <span class="o">==</span> <span class="s2">&quot;loader&quot;</span><span class="p">:</span>
             <span class="n">log_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
                 <span class="p">[</span>
@@ -489,7 +489,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_log_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">log_path</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">log_hparams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hparams</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs hyper-parameters to Neptune.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs hyper-parameters to Neptune.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_namespace</span><span class="si">}</span><span class="s2">/hparams&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hparams</span>
 
     <span class="k">def</span> <span class="nf">log_metrics</span><span class="p">(</span>
@@ -498,7 +498,7 @@
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs batch, epoch and loader metrics to Neptune.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs batch, epoch and loader metrics to Neptune.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">scope</span> <span class="o">==</span> <span class="s2">&quot;batch&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_batch_metrics</span><span class="p">:</span>
             <span class="n">neptune_path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">base_namespace</span><span class="p">,</span> <span class="n">runner</span><span class="o">.</span><span class="n">loader_key</span><span class="p">,</span> <span class="n">scope</span><span class="p">])</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_log_metrics</span><span class="p">(</span>
@@ -525,11 +525,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_log_metrics</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span> <span class="n">neptune_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">base_namespace</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">flush_log</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Flushes the loggers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flushes the loggers.&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">close_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Closes the loggers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Closes the loggers.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span></div>
 
 
@@ -546,7 +546,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

@@ -274,7 +274,7 @@
 
 
 <div class="viewcode-block" id="BalanceBatchSampler"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.sampler.BalanceBatchSampler">[docs]</a><span class="k">class</span> <span class="nc">BalanceBatchSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This kind of sampler can be used for both metric learning and</span>
 <span class="sd">    classification task.</span>
 
@@ -319,7 +319,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="BalanceBatchSampler.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.sampler.BalanceBatchSampler.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">p</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sampler initialisation.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sampler initialisation.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">classes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 
@@ -345,7 +345,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">batch_size</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            this value should be used in DataLoader as batch size</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -353,21 +353,21 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">batches_in_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            number of batches in an epoch</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_epoch_classes</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_p</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            number of samples in an epoch</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_epoch_classes</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_k</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            indeces for sampling dataset elems during an epoch</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -392,7 +392,7 @@
 
 
 <div class="viewcode-block" id="DynamicBalanceClassSampler"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.data.sampler.DynamicBalanceClassSampler">[docs]</a><span class="k">class</span> <span class="nc">DynamicBalanceClassSampler</span><span class="p">(</span><span class="n">Sampler</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This kind of sampler can be used for classification tasks with significant</span>
 <span class="sd">    class imbalance.</span>
 
@@ -442,7 +442,7 @@
         <span class="n">mode</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;downsampling&quot;</span><span class="p">,</span>
         <span class="n">ignore_warning</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            labels: list of labels for each elem in the dataset</span>
 <span class="sd">            exp_lambda: exponent figure for schedule</span>
@@ -472,7 +472,7 @@
                 <span class="sa">f</span><span class="s2">&quot;the smallest class contains only&quot;</span>
                 <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min_class_size</span><span class="si">}</span><span class="s2"> examples. At the end of&quot;</span>
                 <span class="sa">f</span><span class="s2">&quot; training, epochs will contain only&quot;</span>
-                <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min_class_size</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples_per_class</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min_class_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">samples_per_class</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="sa">f</span><span class="s2">&quot; examples&quot;</span>
             <span class="p">)</span>
 
@@ -493,7 +493,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Update d coefficients.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update d coefficients.&quot;&quot;&quot;</span>
         <span class="n">current_d</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">key</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">value</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exp_scheduler</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_d</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
@@ -509,7 +509,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exp_lambda</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">epoch</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            iterator of indices of stratified sample</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -526,7 +526,7 @@
         <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
 <span class="sd">             length of result sample</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -534,7 +534,7 @@
 
 
 <span class="k">class</span> <span class="nc">DynamicLenBatchSampler</span><span class="p">(</span><span class="n">BatchSampler</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A dynamic batch length data sampler.</span>
 <span class="sd">    Should be used with `catalyst.utils.trim_tensors`.</span>
 
@@ -569,7 +569,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Iteration over BatchSampler.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">buckets</span> <span class="o">=</span> <span class="p">[[]]</span> <span class="o">*</span> <span class="mi">100</span>
@@ -625,7 +625,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

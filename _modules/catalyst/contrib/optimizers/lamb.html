@@ -266,7 +266,7 @@
 
 
 <span class="k">def</span> <span class="nf">_log_lamb_rs</span><span class="p">(</span><span class="n">optimizer</span><span class="p">:</span> <span class="n">Optimizer</span><span class="p">,</span> <span class="n">event_writer</span><span class="p">,</span> <span class="n">token_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Log a histogram of trust ratio scalars in across layers.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Log a histogram of trust ratio scalars in across layers.&quot;&quot;&quot;</span>
     <span class="n">results</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">group</span><span class="p">[</span><span class="s2">&quot;params&quot;</span><span class="p">]:</span>
@@ -280,7 +280,7 @@
 
 
 <div class="viewcode-block" id="Lamb"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.optimizers.lamb.Lamb">[docs]</a><span class="k">class</span> <span class="nc">Lamb</span><span class="p">(</span><span class="n">Optimizer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Implements Lamb algorithm.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implements Lamb algorithm.</span>
 
 <span class="sd">    It has been proposed in `Training BERT in 76 minutes`_.</span>
 
@@ -297,7 +297,7 @@
         <span class="n">weight_decay</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
         <span class="n">adam</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            params: iterable of parameters to optimize or dicts</span>
 <span class="sd">                defining parameter groups</span>
@@ -333,7 +333,7 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">Lamb</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">defaults</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">closure</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Makes optimizer step.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes optimizer step.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            closure (callable, optional): A closure that reevaluates</span>
@@ -424,7 +424,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

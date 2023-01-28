@@ -265,7 +265,7 @@
 
 
 <div class="viewcode-block" id="cSE"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.cSE">[docs]</a><span class="k">class</span> <span class="nc">cSE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>  <span class="c1"># noqa: N801</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The channel-wise SE (Squeeze and Excitation) block from the</span>
 <span class="sd">    `Squeeze-and-Excitation Networks`__ paper.</span>
 
@@ -283,7 +283,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="cSE.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.cSE.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            in_channels: The number of channels</span>
 <span class="sd">                in the feature map of the input.</span>
@@ -295,7 +295,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_channels</span> <span class="o">//</span> <span class="n">r</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
         <span class="n">input_x</span> <span class="o">=</span> <span class="n">x</span>
 
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -309,7 +309,7 @@
 
 
 <div class="viewcode-block" id="sSE"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.sSE">[docs]</a><span class="k">class</span> <span class="nc">sSE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>  <span class="c1"># noqa: N801</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The sSE (Channel Squeeze and Spatial Excitation) block from the</span>
 <span class="sd">    `Concurrent Spatial and Channel ‘Squeeze &amp; Excitation’</span>
 <span class="sd">    in Fully Convolutional Networks`__ paper.</span>
@@ -326,7 +326,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="sSE.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.sSE.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            in_channels: The number of channels</span>
 <span class="sd">                in the feature map of the input.</span>
@@ -335,7 +335,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
         <span class="n">input_x</span> <span class="o">=</span> <span class="n">x</span>
 
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -346,7 +346,7 @@
 
 
 <div class="viewcode-block" id="scSE"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.scSE">[docs]</a><span class="k">class</span> <span class="nc">scSE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>  <span class="c1"># noqa: N801</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The scSE (Concurrent Spatial and Channel Squeeze and Channel Excitation)</span>
 <span class="sd">    block from the `Concurrent Spatial and Channel ‘Squeeze &amp; Excitation’</span>
 <span class="sd">    in Fully Convolutional Networks`__ paper.</span>
@@ -363,7 +363,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="scSE.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.layers.se.scSE.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            in_channels: The number of channels</span>
 <span class="sd">                in the feature map of the input.</span>
@@ -375,7 +375,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">sse_block</span> <span class="o">=</span> <span class="n">sSE</span><span class="p">(</span><span class="n">in_channels</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward call.&quot;&quot;&quot;</span>
         <span class="n">cse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cse_block</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">sse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sse_block</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cse</span><span class="p">,</span> <span class="n">sse</span><span class="p">)</span>
@@ -395,7 +395,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

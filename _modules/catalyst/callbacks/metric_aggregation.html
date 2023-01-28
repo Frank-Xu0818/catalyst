@@ -277,7 +277,7 @@
 
 
 <div class="viewcode-block" id="MetricAggregationCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.metric_aggregation.MetricAggregationCallback">[docs]</a><span class="k">class</span> <span class="nc">MetricAggregationCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A callback to aggregate several metrics in one value.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A callback to aggregate several metrics in one value.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        metric_key: new key for aggregated metric.</span>
@@ -384,7 +384,7 @@
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;batch&quot;</span><span class="p">,</span>
         <span class="n">multiplier</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="n">CallbackOrder</span><span class="o">.</span><span class="n">metric_aggregation</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">metric_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metric_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -464,7 +464,7 @@
         <span class="n">metrics</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">metric_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">metric_aggregated</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric and add it to the batch metrics.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric and add it to the batch metrics.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -474,7 +474,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_process_metrics</span><span class="p">(</span><span class="s2">&quot;batch&quot;</span><span class="p">,</span> <span class="n">runner</span><span class="o">.</span><span class="n">batch_metrics</span><span class="p">,</span> <span class="n">runner</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_loader_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric and add it to the loader metrics.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric and add it to the loader metrics.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -495,7 +495,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

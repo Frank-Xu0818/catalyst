@@ -282,7 +282,7 @@
 
 
 <div class="viewcode-block" id="AdditiveMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._additive.AdditiveMetric">[docs]</a><span class="k">class</span> <span class="nc">AdditiveMetric</span><span class="p">(</span><span class="n">IMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This metric computes mean and std values of input data.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This metric computes mean and std values of input data.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        compute_on_call: if True, computes and returns metric value during metric call</span>
@@ -394,7 +394,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compute_on_call</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;numpy&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init AdditiveMetric&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init AdditiveMetric&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">compute_on_call</span><span class="o">=</span><span class="n">compute_on_call</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -411,7 +411,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">update</span> <span class="o">=</span> <span class="n">_to_numpy_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
 
 <div class="viewcode-block" id="AdditiveMetric.reset"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._additive.AdditiveMetric.reset">[docs]</a>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Reset all fields&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset all fields&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">0.0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
@@ -421,7 +421,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">num_samples</span> <span class="o">=</span> <span class="mi">0</span></div>
 
 <div class="viewcode-block" id="AdditiveMetric.update"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._additive.AdditiveMetric.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Update mean metric value and std with new value.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update mean metric value and std with new value.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            value: value to update mean and std with</span>
@@ -450,7 +450,7 @@
         <span class="k">return</span> <span class="n">value</span></div>
 
 <div class="viewcode-block" id="AdditiveMetric.compute"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._additive.AdditiveMetric.compute">[docs]</a>    <span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns mean and std values of all the input data</span>
 
 <span class="sd">        Returns:</span>
@@ -474,7 +474,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

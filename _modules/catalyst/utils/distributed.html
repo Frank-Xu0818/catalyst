@@ -274,7 +274,7 @@
 
 
 <span class="k">def</span> <span class="nf">_is_torch_distributed_initialized</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Checks if torch.distributed is available and initialized.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks if torch.distributed is available and initialized.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">dist</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="ow">and</span> <span class="n">dist</span><span class="o">.</span><span class="n">is_initialized</span><span class="p">()</span>
 
 
@@ -285,7 +285,7 @@
 
 
 <span class="k">def</span> <span class="nf">_is_ddp_wrapped</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Checks whether model is wrapped with DataParallel/DistributedDataParallel.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks whether model is wrapped with DataParallel/DistributedDataParallel.&quot;&quot;&quot;</span>
     <span class="n">parallel_wrappers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">DataParallel</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">DistributedDataParallel</span>
 
     <span class="c1"># Check whether Apex is installed and if it is,</span>
@@ -315,7 +315,7 @@
 
 
 <div class="viewcode-block" id="get_nn_from_ddp_module"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.get_nn_from_ddp_module">[docs]</a><span class="k">def</span> <span class="nf">get_nn_from_ddp_module</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a real model from a torch.nn.DataParallel,</span>
 <span class="sd">    torch.nn.parallel.DistributedDataParallel, or</span>
 <span class="sd">    apex.parallel.DistributedDataParallel.</span>
@@ -332,7 +332,7 @@
 
 
 <div class="viewcode-block" id="get_backend"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.get_backend">[docs]</a><span class="k">def</span> <span class="nf">get_backend</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the backend for distributed training.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the backend for distributed training.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">_is_xla_distributed_initialized</span><span class="p">():</span>
         <span class="k">return</span> <span class="s2">&quot;xla&quot;</span>
     <span class="k">elif</span> <span class="n">_is_torch_distributed_initialized</span><span class="p">():</span>
@@ -342,7 +342,7 @@
 
 
 <div class="viewcode-block" id="get_rank"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.get_rank">[docs]</a><span class="k">def</span> <span class="nf">get_rank</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the rank of the current worker.</span>
 
 <span class="sd">    Returns:</span>
@@ -361,7 +361,7 @@
 
 
 <div class="viewcode-block" id="get_world_size"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.get_world_size">[docs]</a><span class="k">def</span> <span class="nf">get_world_size</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns the world size for distributed training.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the world size for distributed training.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">_is_xla_distributed_initialized</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">xm</span><span class="o">.</span><span class="n">xrt_world_size</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">_is_torch_distributed_initialized</span><span class="p">():</span>
@@ -383,7 +383,7 @@
 
 
 <div class="viewcode-block" id="sum_reduce"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.sum_reduce">[docs]</a><span class="k">def</span> <span class="nf">sum_reduce</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reduce tensor to all processes and compute total (sum) value.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reduce tensor to all processes and compute total (sum) value.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tensor: tensor to reduce.</span>
@@ -397,7 +397,7 @@
 
 
 <div class="viewcode-block" id="mean_reduce"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.mean_reduce">[docs]</a><span class="k">def</span> <span class="nf">mean_reduce</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">world_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reduce tensor to all processes and compute mean value.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reduce tensor to all processes and compute mean value.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tensor: tensor to reduce.</span>
@@ -412,7 +412,7 @@
 
 
 <div class="viewcode-block" id="all_gather"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.all_gather">[docs]</a><span class="k">def</span> <span class="nf">all_gather</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Run all_gather on arbitrary picklable data (not necessarily tensors).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run all_gather on arbitrary picklable data (not necessarily tensors).</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">        if data on different devices</span>
@@ -469,7 +469,7 @@
 
 
 <div class="viewcode-block" id="ddp_reduce"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.distributed.ddp_reduce">[docs]</a><span class="k">def</span> <span class="nf">ddp_reduce</span><span class="p">(</span><span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">world_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Syncs ``tensor`` over ``world_size`` in distributed mode.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Syncs ``tensor`` over ``world_size`` in distributed mode.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tensor: tensor to sync across the processes.</span>
@@ -514,7 +514,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

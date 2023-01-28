@@ -276,7 +276,7 @@
 
 
 <div class="viewcode-block" id="Engine"><a class="viewcode-back" href="../../../api/core.html#catalyst.core.engine.Engine">[docs]</a><span class="k">class</span> <span class="nc">Engine</span><span class="p">(</span><span class="n">Accelerator</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    An abstraction that syncs experiment run with</span>
 <span class="sd">    different hardware-specific configurations.</span>
 <span class="sd">    - CPU</span>
@@ -296,11 +296,11 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">is_ddp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Boolean flag for distributed type.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Boolean flag for distributed type.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">distributed_type</span> <span class="o">!=</span> <span class="n">DistributedType</span><span class="o">.</span><span class="n">NO</span>
 
 <div class="viewcode-block" id="Engine.spawn"><a class="viewcode-back" href="../../../api/core.html#catalyst.core.engine.Engine.spawn">[docs]</a>    <span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Spawns processes with specified ``fn`` and ``args``/``kwargs``.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Spawns processes with specified ``fn`` and ``args``/``kwargs``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            fn (function): Function is called as the entrypoint of the</span>
@@ -319,7 +319,7 @@
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Engine.setup"><a class="viewcode-back" href="../../../api/core.html#catalyst.core.engine.Engine.setup">[docs]</a>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">local_rank</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">world_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize DDP variables and processes if required.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize DDP variables and processes if required.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            local_rank: process rank. Default is `-1`.</span>
@@ -329,11 +329,11 @@
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="Engine.cleanup"><a class="viewcode-back" href="../../../api/core.html#catalyst.core.engine.Engine.cleanup">[docs]</a>    <span class="k">def</span> <span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Cleans DDP variables and processes.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Cleans DDP variables and processes.&quot;&quot;&quot;</span>
         <span class="k">pass</span></div>
 
 <div class="viewcode-block" id="Engine.mean_reduce_ddp_metrics"><a class="viewcode-back" href="../../../api/core.html#catalyst.core.engine.Engine.mean_reduce_ddp_metrics">[docs]</a>    <span class="k">def</span> <span class="nf">mean_reduce_ddp_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metrics</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Syncs ``metrics`` over ``world_size`` in the distributed mode.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Syncs ``metrics`` over ``world_size`` in the distributed mode.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">distributed_type</span> <span class="ow">in</span> <span class="p">[</span>
             <span class="n">DistributedType</span><span class="o">.</span><span class="n">MULTI_CPU</span><span class="p">,</span>
             <span class="n">DistributedType</span><span class="o">.</span><span class="n">MULTI_GPU</span><span class="p">,</span>
@@ -368,7 +368,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

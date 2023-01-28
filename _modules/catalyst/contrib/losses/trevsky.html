@@ -268,7 +268,7 @@
 
 
 <div class="viewcode-block" id="TrevskyLoss"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.trevsky.TrevskyLoss">[docs]</a><span class="k">class</span> <span class="nc">TrevskyLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The trevsky loss.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The trevsky loss.</span>
 <span class="sd">    TrevskyIndex = TP / (TP + alpha * FN + betta * FP)</span>
 <span class="sd">    TrevskyLoss = 1 - TrevskyIndex</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -282,7 +282,7 @@
         <span class="n">weights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-7</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            alpha: false negative coefficient, bigger alpha bigger penalty for</span>
 <span class="sd">                false negative. Must be in (0, 1)</span>
@@ -313,13 +313,13 @@
         <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Calculates loss between ``logits`` and ``target`` tensors.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates loss between ``logits`` and ``target`` tensors.&quot;&quot;&quot;</span>
         <span class="n">trevsky_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
         <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">trevsky_score</span></div>
 
 
 <div class="viewcode-block" id="FocalTrevskyLoss"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.trevsky.FocalTrevskyLoss">[docs]</a><span class="k">class</span> <span class="nc">FocalTrevskyLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The focal trevsky loss.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The focal trevsky loss.</span>
 <span class="sd">    TrevskyIndex = TP / (TP + alpha * FN + betta * FP)</span>
 <span class="sd">    FocalTrevskyLoss = (1 - TrevskyIndex)^gamma</span>
 <span class="sd">    Node: focal will use per image, so loss will pay more attention on complicated images</span>
@@ -335,7 +335,7 @@
         <span class="n">weights</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-7</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            alpha: false negative coefficient, bigger alpha bigger penalty for</span>
 <span class="sd">                false negative. Must be in (0, 1)</span>
@@ -366,7 +366,7 @@
         <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Calculates loss between ``logits`` and ``target`` tensors.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates loss between ``logits`` and ``target`` tensors.&quot;&quot;&quot;</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">batch_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">output_sample</span><span class="p">,</span> <span class="n">target_sample</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
@@ -391,7 +391,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

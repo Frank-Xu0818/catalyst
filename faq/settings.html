@@ -271,19 +271,19 @@
 <p>Catalyst has a wide variety of framework extensions availabe if you need them.
 The base Catalyst package made as light as possible to extend only the PyTorch.
 Nevertheless, there are much more availabe:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install catalyst<span class="o">[</span>comet<span class="o">]</span> <span class="c1"># + comet_ml</span>
-pip install catalyst<span class="o">[</span>cv<span class="o">]</span> <span class="c1"># + imageio, opencv, scikit-image, torchvision, Pillow</span>
-pip install catalyst<span class="o">[</span>deepspeed<span class="o">]</span> <span class="c1"># + deepspeed</span>
-pip install catalyst<span class="o">[</span>dev<span class="o">]</span> <span class="c1"># used for Catalyst development and documentaiton rendering</span>
-pip install catalyst<span class="o">[</span>ml<span class="o">]</span> <span class="c1"># + scipy, matplotlib, pandas, scikit-learn</span>
-pip install catalyst<span class="o">[</span>mlflow<span class="o">]</span> <span class="c1"># + mlflow</span>
-pip install catalyst<span class="o">[</span>neptune<span class="o">]</span> <span class="c1"># + neptune-client</span>
-pip install catalyst<span class="o">[</span>onnx-gpu<span class="o">]</span> <span class="c1"># + onnx, onnxruntime-gpu</span>
-pip install catalyst<span class="o">[</span>onnx<span class="o">]</span> <span class="c1"># + onnx, onnxruntime</span>
-pip install catalyst<span class="o">[</span>optuna<span class="o">]</span> <span class="c1"># + optuna</span>
-pip install catalyst<span class="o">[</span>profiler<span class="o">]</span> <span class="c1"># + profiler</span>
-pip install catalyst<span class="o">[</span>wandb<span class="o">]</span> <span class="c1"># + wandb</span>
-pip install catalyst<span class="o">[</span>all<span class="o">]</span> <span class="c1"># + catalyst[cv], catalyst[ml], catalyst[optuna]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>comet<span class="o">]</span><span class="w"> </span><span class="c1"># + comet_ml</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>cv<span class="o">]</span><span class="w"> </span><span class="c1"># + imageio, opencv, scikit-image, torchvision, Pillow</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>deepspeed<span class="o">]</span><span class="w"> </span><span class="c1"># + deepspeed</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>dev<span class="o">]</span><span class="w"> </span><span class="c1"># used for Catalyst development and documentaiton rendering</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>ml<span class="o">]</span><span class="w"> </span><span class="c1"># + scipy, matplotlib, pandas, scikit-learn</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>mlflow<span class="o">]</span><span class="w"> </span><span class="c1"># + mlflow</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>neptune<span class="o">]</span><span class="w"> </span><span class="c1"># + neptune-client</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>onnx-gpu<span class="o">]</span><span class="w"> </span><span class="c1"># + onnx, onnxruntime-gpu</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>onnx<span class="o">]</span><span class="w"> </span><span class="c1"># + onnx, onnxruntime</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>optuna<span class="o">]</span><span class="w"> </span><span class="c1"># + optuna</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>profiler<span class="o">]</span><span class="w"> </span><span class="c1"># + profiler</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>wandb<span class="o">]</span><span class="w"> </span><span class="c1"># + wandb</span>
+pip<span class="w"> </span>install<span class="w"> </span>catalyst<span class="o">[</span>all<span class="o">]</span><span class="w"> </span><span class="c1"># + catalyst[cv], catalyst[ml], catalyst[optuna]</span>
 </pre></div>
 </div>
 <p>As far as you can see, Catalyst has a lot of extensions, and not all of them are strictly required for everyday PyTorch use, so they are extras.
@@ -294,11 +294,11 @@ Please see the documentaiton for notes about extra requirements.</p>
 <p>To make your workflow reproducible, you could create a <code class="docutils literal notranslate"><span class="pre">.catalyst</span></code> file under your project or root directory so that Catalyst could understand all needed requirements during framework initialization.
 For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>catalyst<span class="o">]</span>
-<span class="nv">cv_required</span> <span class="o">=</span> <span class="nb">false</span>
-<span class="nv">mlflow_required</span> <span class="o">=</span> <span class="nb">false</span>
-<span class="nv">ml_required</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">neptune_required</span> <span class="o">=</span> <span class="nb">false</span>
-<span class="nv">optuna_required</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="nv">cv_required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="nv">mlflow_required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="nv">ml_required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">neptune_required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<span class="nv">optuna_required</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
 </pre></div>
 </div>
 <p>With such a configuration file, Catalyst will raise you an error if there are now required <cite>catalyst[ml]</cite> dependencies were found.</p>
@@ -326,7 +326,7 @@ For example:</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

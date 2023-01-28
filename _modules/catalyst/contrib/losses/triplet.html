@@ -275,13 +275,13 @@
 
 
 <span class="k">class</span> <span class="nc">TripletLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Triplet loss with hard positive/negative mining.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Triplet loss with hard positive/negative mining.</span>
 
 <span class="sd">    Adapted from: https://github.com/NegatioN/OnlineMiningTripletLoss</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin for triplet</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -290,7 +290,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ranking_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MarginRankingLoss</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="n">margin</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_pairwise_distances</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Compute the 2D matrix of distances between all the embeddings.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the 2D matrix of distances between all the embeddings.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            embeddings: tensor of shape (batch_size, embed_dim)</span>
@@ -330,7 +330,7 @@
         <span class="k">return</span> <span class="n">distances</span>
 
     <span class="k">def</span> <span class="nf">_get_anchor_positive_triplet_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a 2D mask where mask[a, p] is True</span>
 <span class="sd">        if a and p are distinct and have same label.</span>
 
@@ -359,7 +359,7 @@
         <span class="k">return</span> <span class="n">labels_equal</span> <span class="o">&amp;</span> <span class="n">indices_not_equal</span>
 
     <span class="k">def</span> <span class="nf">_get_anchor_negative_triplet_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return 2D mask where mask[a, n] is True if a and n have same label.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return 2D mask where mask[a, n] is True if a and n have same label.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            labels: tf.int32 `Tensor` with shape [batch_size]</span>
@@ -373,7 +373,7 @@
         <span class="k">return</span> <span class="o">~</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">labels</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_batch_hard_triplet_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">margin</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Build the triplet loss over a batch of embeddings.</span>
 <span class="sd">        For each anchor, we get the hardest positive and</span>
 <span class="sd">        hardest negative to form a triplet.</span>
@@ -427,7 +427,7 @@
         <span class="k">return</span> <span class="n">loss</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Forward propagation method for the triplet loss.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation method for the triplet loss.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            embeddings: tensor of shape (batch_size, embed_dim)</span>
@@ -440,10 +440,10 @@
 
 
 <span class="k">class</span> <span class="nc">TripletLossV2</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin for triplet.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -451,12 +451,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">margin</span> <span class="o">=</span> <span class="n">margin</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;@TODO: Docs. Contribution is welcome.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">triplet_loss</span><span class="p">(</span><span class="n">embeddings</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">TripletPairwiseEmbeddingLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;TripletPairwiseEmbeddingLoss – proof of concept criterion.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;TripletPairwiseEmbeddingLoss – proof of concept criterion.</span>
 
 <span class="sd">    Still work in progress.</span>
 
@@ -464,7 +464,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">reduction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mean&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin parameter</span>
 <span class="sd">            reduction: criterion reduction type</span>
@@ -474,7 +474,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">reduction</span> <span class="o">=</span> <span class="n">reduction</span> <span class="ow">or</span> <span class="s2">&quot;none&quot;</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">embeddings_pred</span><span class="p">,</span> <span class="n">embeddings_true</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Work in progress.</span>
 
 <span class="sd">        Args:</span>
@@ -512,13 +512,13 @@
 
 
 <div class="viewcode-block" id="TripletMarginLossWithSampler"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.triplet.TripletMarginLossWithSampler">[docs]</a><span class="k">class</span> <span class="nc">TripletMarginLossWithSampler</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class combines in-batch sampling of triplets and</span>
 <span class="sd">    default TripletMargingLoss from PyTorch.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="TripletMarginLossWithSampler.__init__"><a class="viewcode-back" href="../../../../api/contrib.html#catalyst.contrib.losses.triplet.TripletMarginLossWithSampler.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sampler_inbatch</span><span class="p">:</span> <span class="s2">&quot;IInbatchTripletSampler&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            margin: margin value</span>
 <span class="sd">            sampler_inbatch: sampler for forming triplets inside the batch</span>
@@ -528,7 +528,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_triplet_margin_loss</span> <span class="o">=</span> <span class="n">TripletMarginLoss</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="n">margin</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">,</span> <span class="n">labels</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            features: features with shape [batch_size, features_dim]</span>
 <span class="sd">            labels: labels of samples having batch_size elements</span>
@@ -570,7 +570,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

@@ -282,7 +282,7 @@
 
 
 <div class="viewcode-block" id="ISupervisedRunner"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.ISupervisedRunner">[docs]</a><span class="k">class</span> <span class="nc">ISupervisedRunner</span><span class="p">(</span><span class="n">Runner</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;IRunner for experiments with supervised model.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;IRunner for experiments with supervised model.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        input_key: key in ``runner.batch`` dict mapping for model input</span>
@@ -324,7 +324,7 @@
         <span class="n">target_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;targets&quot;</span><span class="p">,</span>
         <span class="n">loss_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;loss&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="n">IRunner</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_input_key</span> <span class="o">=</span> <span class="n">input_key</span>
@@ -387,7 +387,7 @@
         <span class="k">return</span> <span class="n">output</span>
 
 <div class="viewcode-block" id="ISupervisedRunner.forward"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.ISupervisedRunner.forward">[docs]</a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Forward method for your Runner.</span>
 <span class="sd">        Should not be called directly outside of runner.</span>
 <span class="sd">        If your model has specific interface, override this method to use it</span>
@@ -405,12 +405,12 @@
         <span class="k">return</span> <span class="n">output</span></div>
 
     <span class="k">def</span> <span class="nf">on_batch_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">batch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_batch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">on_batch_start</span><span class="p">(</span><span class="n">runner</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ISupervisedRunner.handle_batch"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.ISupervisedRunner.handle_batch">[docs]</a>    <span class="k">def</span> <span class="nf">handle_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Inner method to handle specified data batch.</span>
 <span class="sd">        Used to make a train/valid/infer step during Experiment run.</span>
 
@@ -421,7 +421,7 @@
 
 
 <div class="viewcode-block" id="SupervisedRunner"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.SupervisedRunner">[docs]</a><span class="k">class</span> <span class="nc">SupervisedRunner</span><span class="p">(</span><span class="n">ISupervisedRunner</span><span class="p">,</span> <span class="n">Runner</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Runner for experiments with supervised model.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Runner for experiments with supervised model.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        model: Torch model instance</span>
@@ -456,7 +456,7 @@
         <span class="n">target_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;targets&quot;</span><span class="p">,</span>
         <span class="n">loss_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;loss&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="n">ISupervisedRunner</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">input_key</span><span class="o">=</span><span class="n">input_key</span><span class="p">,</span>
@@ -468,7 +468,7 @@
 
 <div class="viewcode-block" id="SupervisedRunner.predict_batch"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.SupervisedRunner.predict_batch">[docs]</a>    <span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">predict_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Run model inference on specified data batch.</span>
 
 <span class="sd">        .. warning::</span>
@@ -487,7 +487,7 @@
         <span class="k">return</span> <span class="n">output</span></div>
 
 <div class="viewcode-block" id="SupervisedRunner.get_callbacks"><a class="viewcode-back" href="../../../api/runners.html#catalyst.runners.supervised.SupervisedRunner.get_callbacks">[docs]</a>    <span class="k">def</span> <span class="nf">get_callbacks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;OrderedDict[str, Callback]&quot;</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Returns the callbacks for the experiment.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the callbacks for the experiment.&quot;&quot;&quot;</span>
         <span class="n">callbacks</span> <span class="o">=</span> <span class="n">sort_callbacks_by_order</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_callbacks</span><span class="p">())</span>
         <span class="n">callback_exists</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">callback_fn</span><span class="p">:</span> <span class="nb">any</span><span class="p">(</span>
             <span class="n">callback_isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">callback_fn</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
@@ -530,7 +530,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

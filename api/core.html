@@ -472,7 +472,7 @@ Used to make a train/valid/infer step during Experiment run.</p>
 <h2><a class="toc-backref" href="#id5">Engine</a><a class="headerlink" href="#engine" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="catalyst.core.engine.Engine">
-<em class="property">class </em><code class="sig-prename descclassname">catalyst.core.engine.</code><code class="sig-name descname">Engine</code><span class="sig-paren">(</span><em class="sig-param">device_placement: bool = True</em>, <em class="sig-param">split_batches: bool = False</em>, <em class="sig-param">fp16: bool = None</em>, <em class="sig-param">mixed_precision: Union[accelerate.utils.PrecisionType</em>, <em class="sig-param">str] = None</em>, <em class="sig-param">cpu: bool = False</em>, <em class="sig-param">deepspeed_plugin: accelerate.utils.DeepSpeedPlugin = None</em>, <em class="sig-param">fsdp_plugin: accelerate.utils.FullyShardedDataParallelPlugin = None</em>, <em class="sig-param">rng_types: Optional[List[Union[str</em>, <em class="sig-param">accelerate.utils.RNGType]]] = None</em>, <em class="sig-param">log_with: Optional[List[Union[str</em>, <em class="sig-param">accelerate.utils.LoggerType</em>, <em class="sig-param">accelerate.tracking.GeneralTracker]]] = None</em>, <em class="sig-param">logging_dir: Union[str</em>, <em class="sig-param">os.PathLike</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">dispatch_batches: Optional[bool] = None</em>, <em class="sig-param">step_scheduler_with_optimizer: bool = True</em>, <em class="sig-param">kwargs_handlers: Optional[List[accelerate.kwargs_handlers.KwargsHandler]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/catalyst/core/engine.html#Engine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#catalyst.core.engine.Engine" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">catalyst.core.engine.</code><code class="sig-name descname">Engine</code><span class="sig-paren">(</span><em class="sig-param">device_placement: bool = True</em>, <em class="sig-param">split_batches: bool = False</em>, <em class="sig-param">fp16: bool = None</em>, <em class="sig-param">mixed_precision: Union[accelerate.utils.dataclasses.PrecisionType</em>, <em class="sig-param">str] = None</em>, <em class="sig-param">gradient_accumulation_steps: int = 1</em>, <em class="sig-param">cpu: bool = False</em>, <em class="sig-param">deepspeed_plugin: accelerate.utils.dataclasses.DeepSpeedPlugin = None</em>, <em class="sig-param">fsdp_plugin: accelerate.utils.dataclasses.FullyShardedDataParallelPlugin = None</em>, <em class="sig-param">megatron_lm_plugin: accelerate.utils.dataclasses.MegatronLMPlugin = None</em>, <em class="sig-param">rng_types: Optional[List[Union[str</em>, <em class="sig-param">accelerate.utils.dataclasses.RNGType]]] = None</em>, <em class="sig-param">log_with: Optional[List[Union[str</em>, <em class="sig-param">accelerate.utils.dataclasses.LoggerType</em>, <em class="sig-param">accelerate.tracking.GeneralTracker]]] = None</em>, <em class="sig-param">logging_dir: Union[str</em>, <em class="sig-param">os.PathLike</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">dispatch_batches: Optional[bool] = None</em>, <em class="sig-param">even_batches: bool = True</em>, <em class="sig-param">step_scheduler_with_optimizer: bool = True</em>, <em class="sig-param">kwargs_handlers: Optional[List[accelerate.utils.dataclasses.KwargsHandler]] = None</em>, <em class="sig-param">dynamo_backend: Union[accelerate.utils.dataclasses.DynamoBackend</em>, <em class="sig-param">str] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/catalyst/core/engine.html#Engine"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#catalyst.core.engine.Engine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">accelerate.accelerator.Accelerator</span></code></p>
 <p>An abstraction that syncs experiment run with
 different hardware-specific configurations.
@@ -750,17 +750,17 @@ for example:</p>
 </dl>
 <p>To give users maximum flexibility and extensibility Catalyst supports
 callback execution anywhere in the training loop:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-- experiment start
----- epoch start
------- loader start
--------- batch start
----------- batch handler <span class="o">(</span>Runner logic<span class="o">)</span>
--------- batch end
------- loader end
----- epoch end
--- experiment end
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--<span class="w"> </span>experiment<span class="w"> </span>start
+----<span class="w"> </span>epoch<span class="w"> </span>start
+------<span class="w"> </span>loader<span class="w"> </span>start
+--------<span class="w"> </span>batch<span class="w"> </span>start
+----------<span class="w"> </span>batch<span class="w"> </span>handler<span class="w"> </span><span class="o">(</span>Runner<span class="w"> </span>logic<span class="o">)</span>
+--------<span class="w"> </span>batch<span class="w"> </span>end
+------<span class="w"> </span>loader<span class="w"> </span>end
+----<span class="w"> </span>epoch<span class="w"> </span>end
+--<span class="w"> </span>experiment<span class="w"> </span>end
 
-exception – <span class="k">if</span> an Exception was raised
+exception<span class="w"> </span>–<span class="w"> </span><span class="k">if</span><span class="w"> </span>an<span class="w"> </span>Exception<span class="w"> </span>was<span class="w"> </span>raised
 </pre></div>
 </div>
 <p>Abstraction, please check out implementations for more details:</p>
@@ -941,7 +941,7 @@ default <code class="docutils literal notranslate"><span class="pre">True</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

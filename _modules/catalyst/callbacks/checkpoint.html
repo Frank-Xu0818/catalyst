@@ -279,7 +279,7 @@
 
 
 <div class="viewcode-block" id="CheckpointCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.checkpoint.CheckpointCallback">[docs]</a><span class="k">class</span> <span class="nc">CheckpointCallback</span><span class="p">(</span><span class="n">ICheckpointCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Checkpoint callback to save/restore your model/runner.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checkpoint callback to save/restore your model/runner.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        logdir: directory to store checkpoints</span>
@@ -311,7 +311,7 @@
         <span class="n">resume_runner</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">load_best_on_end</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">assert</span> <span class="n">topk</span> <span class="o">&gt;=</span> <span class="mi">1</span>
         <span class="k">assert</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span>
@@ -447,7 +447,7 @@
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">fout</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_experiment_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_storage</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Checkpoint</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># assert issubclass(runner.model.__class__, torch.nn.Module), (</span>
         <span class="c1">#     &quot;Could not understand the model class. &quot;</span>
@@ -460,7 +460,7 @@
         <span class="p">)</span>
 
 <div class="viewcode-block" id="CheckpointCallback.on_epoch_end_best"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.checkpoint.CheckpointCallback.on_epoch_end_best">[docs]</a>    <span class="k">def</span> <span class="nf">on_epoch_end_best</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">score</span> <span class="o">=</span> <span class="n">runner</span><span class="o">.</span><span class="n">epoch_metrics</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">loader_key</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">metric_key</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
@@ -472,11 +472,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_save</span><span class="p">(</span><span class="n">runner</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_storage</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">obj</span><span class="p">,</span> <span class="n">best_logprefix</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="CheckpointCallback.on_epoch_end_last"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.checkpoint.CheckpointCallback.on_epoch_end_last">[docs]</a>    <span class="k">def</span> <span class="nf">on_epoch_end_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_handle_epoch</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">,</span> <span class="n">score</span><span class="o">=</span><span class="n">runner</span><span class="o">.</span><span class="n">epoch_step</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">on_experiment_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">runner</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">process_index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">log_message</span> <span class="o">=</span> <span class="s2">&quot;Top models:</span><span class="se">\n</span><span class="s2">&quot;</span>
             <span class="n">log_message</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
@@ -503,7 +503,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

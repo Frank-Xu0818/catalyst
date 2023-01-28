@@ -270,7 +270,7 @@
 
 
 <div class="viewcode-block" id="PeriodicLoaderCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.periodic_loader.PeriodicLoaderCallback">[docs]</a><span class="k">class</span> <span class="nc">PeriodicLoaderCallback</span><span class="p">(</span><span class="n">Callback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Callback for runing loaders with specified period.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Callback for runing loaders with specified period.</span>
 <span class="sd">    To disable loader use ``0`` as period (if specified ``0`` for validation loader</span>
 <span class="sd">    then will be raised an error).</span>
 
@@ -316,7 +316,7 @@
         <span class="n">minimize</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="n">CallbackOrder</span><span class="o">.</span><span class="n">internal</span><span class="p">)</span>
         <span class="c1"># @TODO: make valid_loader optional</span>
 
@@ -338,7 +338,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">loader_periods</span><span class="p">[</span><span class="n">loader</span><span class="p">]</span> <span class="o">=</span> <span class="n">period</span>
 
     <span class="k">def</span> <span class="nf">on_experiment_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Collect information about loaders.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Collect information about loaders.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -375,7 +375,7 @@
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_epoch_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set loaders for current epoch.</span>
 <span class="sd">        If validation is not required then the first loader</span>
 <span class="sd">        from loaders used in current epoch will be used</span>
@@ -407,7 +407,7 @@
         <span class="n">runner</span><span class="o">.</span><span class="n">loaders</span> <span class="o">=</span> <span class="n">epoch_loaders</span>
 
     <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Check if validation metric should be dropped for current epoch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if validation metric should be dropped for current epoch.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -433,7 +433,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

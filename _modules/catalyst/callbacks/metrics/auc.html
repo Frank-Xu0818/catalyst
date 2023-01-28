@@ -269,7 +269,7 @@
 
 
 <div class="viewcode-block" id="AUCCallback"><a class="viewcode-back" href="../../../../api/callbacks.html#catalyst.callbacks.metrics.auc.AUCCallback">[docs]</a><span class="k">class</span> <span class="nc">AUCCallback</span><span class="p">(</span><span class="n">LoaderMetricCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;ROC-AUC  metric callback.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;ROC-AUC  metric callback.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        input_key: input key to use for auc calculation, specifies our ``y_true``.</span>
@@ -347,7 +347,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric</span><span class="o">=</span><span class="n">AUCMetric</span><span class="p">(</span>
                 <span class="n">compute_per_class_metrics</span><span class="o">=</span><span class="n">compute_per_class_metrics</span><span class="p">,</span>
@@ -359,7 +359,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_experiment_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="p">(</span>
             <span class="ow">not</span> <span class="n">runner</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">use_fp16</span>
         <span class="p">),</span> <span class="s2">&quot;AUCCallback could not work within amp training&quot;</span>
@@ -379,7 +379,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

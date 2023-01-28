@@ -288,7 +288,7 @@
 
 
 <div class="viewcode-block" id="get_optimizer_momentum"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.get_optimizer_momentum">[docs]</a><span class="k">def</span> <span class="nf">get_optimizer_momentum</span><span class="p">(</span><span class="n">optimizer</span><span class="p">:</span> <span class="n">TorchOptimizer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Get momentum of current optimizer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get momentum of current optimizer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        optimizer: PyTorch optimizer</span>
@@ -302,7 +302,7 @@
 
 
 <div class="viewcode-block" id="get_optimizer_momentum_list"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.get_optimizer_momentum_list">[docs]</a><span class="k">def</span> <span class="nf">get_optimizer_momentum_list</span><span class="p">(</span><span class="n">optimizer</span><span class="p">:</span> <span class="n">TorchOptimizer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Get list of optimizer momentums (for each param group)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get list of optimizer momentums (for each param group)</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        optimizer: PyTorch optimizer</span>
@@ -321,7 +321,7 @@
 
 
 <div class="viewcode-block" id="set_optimizer_momentum"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.set_optimizer_momentum">[docs]</a><span class="k">def</span> <span class="nf">set_optimizer_momentum</span><span class="p">(</span><span class="n">optimizer</span><span class="p">:</span> <span class="n">TorchOptimizer</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Set momentum of ``index`` &#39;th param group of optimizer to ``value``.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set momentum of ``index`` &#39;th param group of optimizer to ``value``.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        optimizer: PyTorch optimizer</span>
@@ -339,7 +339,7 @@
 
 
 <div class="viewcode-block" id="get_device"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.get_device">[docs]</a><span class="k">def</span> <span class="nf">get_device</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Simple returning the best available device (TPU &gt; GPU &gt; CPU).&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple returning the best available device (TPU &gt; GPU &gt; CPU).&quot;&quot;&quot;</span>
     <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">SETTINGS</span><span class="o">.</span><span class="n">xla_required</span><span class="p">:</span>
         <span class="n">device</span> <span class="o">=</span> <span class="n">xm</span><span class="o">.</span><span class="n">xla_device</span><span class="p">()</span>
@@ -353,7 +353,7 @@
     <span class="n">fp16</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">ddp</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Engine&quot;</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns available engine based on given arguments.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns available engine based on given arguments.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        cpu (bool): option to use cpu for training. Default is `False`.</span>
@@ -388,7 +388,7 @@
 
 
 <div class="viewcode-block" id="get_available_gpus"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.get_available_gpus">[docs]</a><span class="k">def</span> <span class="nf">get_available_gpus</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Array of available GPU ids.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Array of available GPU ids.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; os.environ[&quot;CUDA_VISIBLE_DEVICES&quot;] = &quot;0,2&quot;</span>
@@ -429,7 +429,7 @@
     <span class="n">value</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">],</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">RunnerDevice</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Move tensor, list of tensors, list of list of tensors,</span>
 <span class="sd">    dict of tensors, tuple of tensors to target device.</span>
 
@@ -456,7 +456,7 @@
 
 
 <div class="viewcode-block" id="prepare_cudnn"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.prepare_cudnn">[docs]</a><span class="k">def</span> <span class="nf">prepare_cudnn</span><span class="p">(</span><span class="n">deterministic</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">benchmark</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Prepares CuDNN benchmark and sets CuDNN</span>
 <span class="sd">    to be deterministic/non-deterministic mode</span>
 
@@ -481,7 +481,7 @@
 
 
 <div class="viewcode-block" id="get_requires_grad"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.get_requires_grad">[docs]</a><span class="k">def</span> <span class="nf">get_requires_grad</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">TorchModel</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Gets the ``requires_grad`` value for all model parameters.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets the ``requires_grad`` value for all model parameters.</span>
 
 <span class="sd">    Example::</span>
 
@@ -501,7 +501,7 @@
 
 
 <div class="viewcode-block" id="set_requires_grad"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.set_requires_grad">[docs]</a><span class="k">def</span> <span class="nf">set_requires_grad</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">TorchModel</span><span class="p">,</span> <span class="n">requires_grad</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the ``requires_grad`` value for all model parameters.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the ``requires_grad`` value for all model parameters.</span>
 
 <span class="sd">    Example::</span>
 
@@ -534,7 +534,7 @@
     <span class="n">scheduler</span><span class="p">:</span> <span class="n">RunnerScheduler</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Packs ``model``, ``criterion``, ``optimizer``, ``scheduler``</span>
 <span class="sd">    and some extra info ``**kwargs`` to torch-based checkpoint.</span>
 
@@ -579,7 +579,7 @@
     <span class="n">optimizer</span><span class="p">:</span> <span class="n">RunnerOptimizer</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">scheduler</span><span class="p">:</span> <span class="n">RunnerScheduler</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Load checkpoint from file and unpack the content to a model</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load checkpoint from file and unpack the content to a model</span>
 <span class="sd">    (if not None), criterion (if not None), optimizer (if not None),</span>
 <span class="sd">    scheduler (if not None).</span>
 
@@ -608,7 +608,7 @@
 
 
 <span class="k">def</span> <span class="nf">save_checkpoint</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves checkpoint to a file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves checkpoint to a file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        checkpoint: data to save.</span>
@@ -618,7 +618,7 @@
 
 
 <span class="k">def</span> <span class="nf">load_checkpoint</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Load checkpoint from path.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load checkpoint from path.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        path: checkpoint file to load</span>
@@ -631,7 +631,7 @@
 
 
 <div class="viewcode-block" id="soft_update"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.soft_update">[docs]</a><span class="k">def</span> <span class="nf">soft_update</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">tau</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Updates the `target` data with the `source` one</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Updates the `target` data with the `source` one</span>
 <span class="sd">    smoothing by ``tau`` (inplace operation).</span>
 
 <span class="sd">    Args:</span>
@@ -647,7 +647,7 @@
 <div class="viewcode-block" id="mixup_batch"><a class="viewcode-back" href="../../../api/utils.html#catalyst.utils.torch.mixup_batch">[docs]</a><span class="k">def</span> <span class="nf">mixup_batch</span><span class="p">(</span>
     <span class="n">batch</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">],</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;replace&quot;</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        batch: batch to which you want to apply augmentation</span>
@@ -714,7 +714,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

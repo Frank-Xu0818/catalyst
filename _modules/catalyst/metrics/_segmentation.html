@@ -279,7 +279,7 @@
 
 
 <div class="viewcode-block" id="RegionBasedMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._segmentation.RegionBasedMetric">[docs]</a><span class="k">class</span> <span class="nc">RegionBasedMetric</span><span class="p">(</span><span class="n">ICallbackBatchMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Logic class for all region based metrics, like IoU, Dice, Trevsky.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Logic class for all region based metrics, like IoU, Dice, Trevsky.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        metric_fn: metric function, that get statistics and return score</span>
@@ -316,7 +316,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">compute_on_call</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metric_fn</span> <span class="o">=</span> <span class="n">metric_fn</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">metric_name</span> <span class="o">=</span> <span class="n">metric_name</span>
@@ -350,12 +350,12 @@
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reset all statistics&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset all statistics&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">statistics</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ddp_backend</span> <span class="o">=</span> <span class="n">get_backend</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Updates segmentation statistics with new data</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates segmentation statistics with new data</span>
 <span class="sd">        and return intermediate metrics values.</span>
 
 <span class="sd">        Args:</span>
@@ -394,7 +394,7 @@
     <span class="k">def</span> <span class="nf">update_key_value</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">outputs</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">targets</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Updates segmentation statistics with new data</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates segmentation statistics with new data</span>
 <span class="sd">        and return intermediate metrics values.</span>
 
 <span class="sd">        Args:</span>
@@ -421,7 +421,7 @@
         <span class="k">return</span> <span class="n">metrics</span>
 
     <span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute metrics with accumulated statistics</span>
 
 <span class="sd">        Returns:</span>
@@ -470,7 +470,7 @@
             <span class="k">return</span> <span class="p">[],</span> <span class="n">micro_metric</span><span class="p">,</span> <span class="n">macro_metric</span><span class="p">,</span> <span class="n">weighted_metric</span>
 
     <span class="k">def</span> <span class="nf">compute_key_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute segmentation metric for all data and return results in key-value format</span>
 
 <span class="sd">        Returns:</span>
@@ -496,7 +496,7 @@
 
 
 <div class="viewcode-block" id="IOUMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._segmentation.IOUMetric">[docs]</a><span class="k">class</span> <span class="nc">IOUMetric</span><span class="p">(</span><span class="n">RegionBasedMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    IoU Metric,</span>
 <span class="sd">    iou score = intersection / union = tp / (tp + fp + fn).</span>
 
@@ -618,7 +618,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="n">metric_fn</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_iou</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric_fn</span><span class="o">=</span><span class="n">metric_fn</span><span class="p">,</span>
@@ -635,7 +635,7 @@
 
 
 <div class="viewcode-block" id="DiceMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._segmentation.DiceMetric">[docs]</a><span class="k">class</span> <span class="nc">DiceMetric</span><span class="p">(</span><span class="n">RegionBasedMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Dice Metric,</span>
 <span class="sd">    dice score = 2 * intersection / (intersection + union)) = 2 * tp / (2 * tp + fp + fn)</span>
 
@@ -757,7 +757,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="n">metric_fn</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">_dice</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">metric_fn</span><span class="o">=</span><span class="n">metric_fn</span><span class="p">,</span>
@@ -774,7 +774,7 @@
 
 
 <div class="viewcode-block" id="TrevskyMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._segmentation.TrevskyMetric">[docs]</a><span class="k">class</span> <span class="nc">TrevskyMetric</span><span class="p">(</span><span class="n">RegionBasedMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Trevsky Metric,</span>
 <span class="sd">    trevsky score = tp / (tp + fp * beta + fn * alpha)</span>
 
@@ -902,7 +902,7 @@
         <span class="n">prefix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">suffix</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">alpha</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;if beta=None, alpha must be in (0, 1)&quot;</span>
             <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span>
@@ -939,7 +939,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

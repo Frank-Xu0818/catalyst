@@ -274,7 +274,7 @@
 
 
 <span class="k">def</span> <span class="nf">_image_to_tensor</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates tensor from RGB image.</span>
 
 <span class="sd">    Args:</span>
@@ -290,7 +290,7 @@
 
 
 <div class="viewcode-block" id="TensorboardLogger"><a class="viewcode-back" href="../../../api/loggers.html#catalyst.loggers.tensorboard.TensorboardLogger">[docs]</a><span class="k">class</span> <span class="nc">TensorboardLogger</span><span class="p">(</span><span class="n">ILogger</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Tensorboard logger for parameters, metrics, images and other artifacts.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tensorboard logger for parameters, metrics, images and other artifacts.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        logdir: path to logdir for tensorboard.</span>
@@ -342,7 +342,7 @@
         <span class="n">log_batch_metrics</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">SETTINGS</span><span class="o">.</span><span class="n">log_batch_metrics</span><span class="p">,</span>
         <span class="n">log_epoch_metrics</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">SETTINGS</span><span class="o">.</span><span class="n">log_epoch_metrics</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">log_batch_metrics</span><span class="o">=</span><span class="n">log_batch_metrics</span><span class="p">,</span> <span class="n">log_epoch_metrics</span><span class="o">=</span><span class="n">log_epoch_metrics</span>
         <span class="p">)</span>
@@ -354,7 +354,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Internal logger/experiment/etc. from the monitoring system.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal logger/experiment/etc. from the monitoring system.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loggers</span>
 
     <span class="k">def</span> <span class="nf">_check_loader_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -375,7 +375,7 @@
         <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">,</span>
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs image to Tensorboard for current scope on current step.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs image to Tensorboard for current scope on current step.&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">runner</span><span class="o">.</span><span class="n">loader_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_check_loader_key</span><span class="p">(</span><span class="n">loader_key</span><span class="o">=</span><span class="n">runner</span><span class="o">.</span><span class="n">loader_key</span><span class="p">)</span>
         <span class="n">tensor</span> <span class="o">=</span> <span class="n">_image_to_tensor</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -389,7 +389,7 @@
         <span class="n">scope</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
         <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Logs batch and epoch metrics to Tensorboard.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Logs batch and epoch metrics to Tensorboard.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">scope</span> <span class="o">==</span> <span class="s2">&quot;batch&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_batch_metrics</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_check_loader_key</span><span class="p">(</span><span class="n">loader_key</span><span class="o">=</span><span class="n">runner</span><span class="o">.</span><span class="n">loader_key</span><span class="p">)</span>
             <span class="c1"># metrics = {k: float(v) for k, v in metrics.items()}</span>
@@ -420,12 +420,12 @@
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">flush_log</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Flushes the loggers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Flushes the loggers.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">loggers</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">close_log</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Closes the loggers.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Closes the loggers.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">loggers</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
@@ -443,7 +443,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

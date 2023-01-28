@@ -271,18 +271,18 @@
 
 
 <span class="k">class</span> <span class="nc">ILoaderWrapper</span><span class="p">(</span><span class="n">DataLoader</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Loader wrapper interface.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Loader wrapper interface.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        loader: torch dataloader.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="n">loader</span>
 
     <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets attribute by ``key``.</span>
 <span class="sd">        Firstly, looks at the ``origin`` for the appropriate ``key``.</span>
 <span class="sd">        If none founds - looks at the wrappers attributes.</span>
@@ -306,7 +306,7 @@
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Returns length of the wrapper loader.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns length of the wrapper loader.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            int: length of the wrapper loader</span>
@@ -315,7 +315,7 @@
 
 
 <div class="viewcode-block" id="BatchLimitLoaderWrapper"><a class="viewcode-back" href="../../../api/data.html#catalyst.data.loader.BatchLimitLoaderWrapper">[docs]</a><span class="k">class</span> <span class="nc">BatchLimitLoaderWrapper</span><span class="p">(</span><span class="n">ILoaderWrapper</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Loader wrapper. Limits number of batches used per each iteration.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Loader wrapper. Limits number of batches used per each iteration.</span>
 
 <span class="sd">    For example, if you have some loader and want to use only first 5 bathes:</span>
 
@@ -352,7 +352,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">num_batches</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]):</span>
-        <span class="sd">&quot;&quot;&quot;Loader wrapper. Limits number of batches used per each iteration.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader wrapper. Limits number of batches used per each iteration.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            loader: torch dataloader.</span>
@@ -374,7 +374,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">num_batches</span> <span class="o">=</span> <span class="n">num_batches</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Iterator.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            iterator object</span>
@@ -384,7 +384,7 @@
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Next batch.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Next batch.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            next batch</span>
@@ -464,7 +464,7 @@
 
 
 <div class="viewcode-block" id="BatchPrefetchLoaderWrapper"><a class="viewcode-back" href="../../../api/data.html#catalyst.data.loader.BatchPrefetchLoaderWrapper">[docs]</a><span class="k">class</span> <span class="nc">BatchPrefetchLoaderWrapper</span><span class="p">(</span><span class="n">ILoaderWrapper</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Loader wrapper. Prefetches specified number of batches on the GPU.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Loader wrapper. Prefetches specified number of batches on the GPU.</span>
 
 <span class="sd">    Base usage:</span>
 
@@ -552,7 +552,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">num_prefetches</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loader wrapper. Prefetches specified number of batches on the GPU.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader wrapper. Prefetches specified number of batches on the GPU.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            loader: torch dataloader.</span>
@@ -562,7 +562,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">num_prefetches</span> <span class="o">=</span> <span class="n">num_prefetches</span> <span class="ow">or</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Iterator.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            iterator object</span>
@@ -583,7 +583,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

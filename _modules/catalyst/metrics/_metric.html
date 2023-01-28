@@ -263,7 +263,7 @@
 
 
 <div class="viewcode-block" id="IMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.IMetric">[docs]</a><span class="k">class</span> <span class="nc">IMetric</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Interface for all Metrics.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface for all Metrics.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        compute_on_call: Computes and returns metric value during metric call.</span>
@@ -272,12 +272,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compute_on_call</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Interface for all Metrics.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Interface for all Metrics.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compute_on_call</span> <span class="o">=</span> <span class="n">compute_on_call</span>
 
 <div class="viewcode-block" id="IMetric.reset"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.IMetric.reset">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Resets the metric to it&#39;s initial state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Resets the metric to it&#39;s initial state.</span>
 
 <span class="sd">        By default, this is called at the start of each loader</span>
 <span class="sd">        (`on_loader_start` event).</span>
@@ -286,7 +286,7 @@
 
 <div class="viewcode-block" id="IMetric.update"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.IMetric.update">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Updates the metrics state using the passed data.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the metrics state using the passed data.</span>
 
 <span class="sd">        By default, this is called at the end of each batch</span>
 <span class="sd">        (`on_batch_end` event).</span>
@@ -299,7 +299,7 @@
 
 <div class="viewcode-block" id="IMetric.compute"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.IMetric.compute">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">compute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
 
 <span class="sd">        By default, this is called at the end of each loader</span>
 <span class="sd">        (`on_loader_end` event).</span>
@@ -311,7 +311,7 @@
         <span class="k">pass</span></div>
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
 
 <span class="sd">        By default, this is called at the end of each batch</span>
 <span class="sd">        (`on_batch_end` event).</span>
@@ -329,19 +329,19 @@
 
 
 <div class="viewcode-block" id="ICallbackBatchMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackBatchMetric">[docs]</a><span class="k">class</span> <span class="nc">ICallbackBatchMetric</span><span class="p">(</span><span class="n">IMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Interface for all batch-based Metrics.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface for all batch-based Metrics.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">compute_on_call</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">compute_on_call</span><span class="o">=</span><span class="n">compute_on_call</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span> <span class="o">=</span> <span class="n">suffix</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
 
 <div class="viewcode-block" id="ICallbackBatchMetric.update_key_value"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackBatchMetric.update_key_value">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">update_key_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Updates the metric based with new input.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the metric based with new input.</span>
 
 <span class="sd">        By default, this is called at the end of each loader</span>
 <span class="sd">        (`on_loader_end` event).</span>
@@ -357,7 +357,7 @@
 
 <div class="viewcode-block" id="ICallbackBatchMetric.compute_key_value"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackBatchMetric.compute_key_value">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">compute_key_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
 
 <span class="sd">        By default, this is called at the end of each loader</span>
 <span class="sd">        (`on_loader_end` event).</span>
@@ -369,7 +369,7 @@
 
 
 <div class="viewcode-block" id="ICallbackLoaderMetric"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackLoaderMetric">[docs]</a><span class="k">class</span> <span class="nc">ICallbackLoaderMetric</span><span class="p">(</span><span class="n">IMetric</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Interface for all loader-based Metrics.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface for all loader-based Metrics.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        compute_on_call: Computes and returns metric value during metric call.</span>
@@ -382,14 +382,14 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">compute_on_call</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">compute_on_call</span><span class="o">=</span><span class="n">compute_on_call</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span> <span class="o">=</span> <span class="n">suffix</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
 
 <div class="viewcode-block" id="ICallbackLoaderMetric.reset"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackLoaderMetric.reset">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_batches</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Resets the metric to it&#39;s initial state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Resets the metric to it&#39;s initial state.</span>
 
 <span class="sd">        By default, this is called at the start of each loader</span>
 <span class="sd">        (`on_loader_start` event).</span>
@@ -402,7 +402,7 @@
 
 <div class="viewcode-block" id="ICallbackLoaderMetric.update"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackLoaderMetric.update">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Updates the metrics state using the passed data.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the metrics state using the passed data.</span>
 
 <span class="sd">        By default, this is called at the end of each batch</span>
 <span class="sd">        (`on_batch_end` event).</span>
@@ -415,7 +415,7 @@
 
 <div class="viewcode-block" id="ICallbackLoaderMetric.compute_key_value"><a class="viewcode-back" href="../../../api/metrics.html#catalyst.metrics._metric.ICallbackLoaderMetric.compute_key_value">[docs]</a>    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">compute_key_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-        <span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Computes the metric based on it&#39;s accumulated state.</span>
 
 <span class="sd">        By default, this is called at the end of each loader</span>
 <span class="sd">        (`on_loader_end` event).</span>
@@ -441,7 +441,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>

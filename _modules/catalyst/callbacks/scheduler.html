@@ -274,7 +274,7 @@
 
 
 <div class="viewcode-block" id="SchedulerCallback"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.scheduler.SchedulerCallback">[docs]</a><span class="k">class</span> <span class="nc">SchedulerCallback</span><span class="p">(</span><span class="n">ISchedulerCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Scheduler callback, abstraction over scheduler step.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Scheduler callback, abstraction over scheduler step.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        scheduler_key: scheduler name, if ``None``,</span>
@@ -302,7 +302,7 @@
         <span class="n">loader_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">metric_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Init.&quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">loader_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">metric_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">assert</span> <span class="n">loader_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">metric_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="p">(</span>
@@ -336,7 +336,7 @@
         <span class="n">lr_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
         <span class="n">momentum_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">]],</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update learning rate and momentum in metrics_dict</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update learning rate and momentum in metrics_dict</span>
 <span class="sd">        (consider only 0-th param group)</span>
 
 <span class="sd">        Args:</span>
@@ -360,7 +360,7 @@
             <span class="n">metrics_dict</span><span class="p">[</span><span class="n">momentum_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">momentum</span>
 
     <span class="k">def</span> <span class="nf">make_batch_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Perform scheduler step and update batch metrics</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform scheduler step and update batch metrics</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -371,7 +371,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">make_epoch_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Perform scheduler step and update epoch metrics</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform scheduler step and update epoch metrics</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -389,7 +389,7 @@
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_experiment_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scheduler</span> <span class="o">=</span> <span class="n">get_attr</span><span class="p">(</span><span class="n">runner</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;scheduler&quot;</span><span class="p">,</span> <span class="n">inner_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scheduler_key</span><span class="p">)</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">scheduler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
@@ -410,7 +410,7 @@
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="p">(</span>
             <span class="n">runner</span><span class="o">.</span><span class="n">is_train_loader</span>
             <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scheduler</span><span class="p">,</span> <span class="n">OneCycleLRWithWarmup</span><span class="p">)</span>
@@ -422,21 +422,21 @@
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">runner</span><span class="o">.</span><span class="n">is_train_loader</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;batch&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">make_batch_step</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;epoch&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">make_epoch_step</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">)</span></div>
 
 
 <span class="k">class</span> <span class="nc">ILRUpdater</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">ISchedulerCallback</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Class interface for all Lr updaters.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class interface for all Lr updaters.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimizer_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            optimizer_key: which optimizer key to use</span>
 <span class="sd">                for learning rate scheduling</span>
@@ -448,12 +448,12 @@
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">calc_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Interface for calculating learning rate.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Interface for calculating learning rate.&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">calc_momentum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Interface for calculating momentum&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Interface for calculating momentum&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
     <span class="nd">@staticmethod</span>
@@ -486,7 +486,7 @@
         <span class="k">return</span> <span class="n">new_lr</span><span class="p">,</span> <span class="n">new_momentum</span>
 
     <span class="k">def</span> <span class="nf">update_optimizer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Update learning rate and momentum in runner.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update learning rate and momentum in runner.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -501,7 +501,7 @@
             <span class="n">runner</span><span class="o">.</span><span class="n">batch_metrics</span><span class="p">[</span><span class="s2">&quot;momentum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">momentum</span>
 
     <span class="k">def</span> <span class="nf">on_experiment_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">get_attr</span><span class="p">(</span>
             <span class="n">runner</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;optimizer&quot;</span><span class="p">,</span> <span class="n">inner_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">optimizer_key</span>
         <span class="p">)</span>
@@ -509,18 +509,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">init_lr</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lr&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">runner</span><span class="o">.</span><span class="n">is_train_loader</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">update_optimizer</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Event handler.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">runner</span><span class="o">.</span><span class="n">is_train_loader</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">update_optimizer</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="LRFinder"><a class="viewcode-back" href="../../../api/callbacks.html#catalyst.callbacks.scheduler.LRFinder">[docs]</a><span class="k">class</span> <span class="nc">LRFinder</span><span class="p">(</span><span class="n">ILRUpdater</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helps you find an optimal learning rate for a model, as per suggestion of</span>
 <span class="sd">    `Cyclical Learning Rates for Training Neural Networks`_ paper.</span>
 <span class="sd">    Learning rate is increased in linear or log scale, depending on user input.</span>
@@ -540,7 +540,7 @@
         <span class="n">num_steps</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">optimizer_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            final_lr: final learning rate to try with</span>
 <span class="sd">            scale: learning rate increasing scale (&quot;log&quot; or &quot;linear&quot;)</span>
@@ -574,7 +574,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_lr</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr_step</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span>
 
     <span class="k">def</span> <span class="nf">calc_lr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Calculates learning rate.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates learning rate.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            learning rate.</span>
@@ -584,11 +584,11 @@
         <span class="k">return</span> <span class="n">res</span>
 
     <span class="k">def</span> <span class="nf">calc_momentum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Calculates new momentum.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates new momentum.&quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">on_loader_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loader start hook. Updates scheduler statistics.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loader start hook. Updates scheduler statistics.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -602,7 +602,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">on_loader_start</span><span class="p">(</span><span class="n">runner</span><span class="o">=</span><span class="n">runner</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runner</span><span class="p">:</span> <span class="s2">&quot;IRunner&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Batch end hook. Make scheduler step and stops iterating if needed.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Batch end hook. Make scheduler step and stops iterating if needed.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            runner: current runner</span>
@@ -629,7 +629,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2022, Scitator.
+        &copy; Copyright 2023, Scitator.
 
     </p>
   </div>
